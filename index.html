@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery_ui_style.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript" src="js/weather.js"></script>
+
+
+</head>
+<body>
+<script type="x-mustache-template" id="forecast_information_tmpl">
+	<span>Forecast for {{city}}</span><br/>
+	<span>{{forecast_date}}</span>
+</script>
+
+<script type="x-mustache-template" id="current_conditions_tmpl">
+	<table>
+		<tr>
+			<td>
+				<div><img src="{{icon}}"></div>
+				<div>{{condition}}</div>
+			</td>
+			<td>
+				<div>{{temp_f}}&deg;F</div>
+				<div>{{humidity}}</div>
+				<div>{{wind_condition}}</div>
+			</td>
+		</tr>
+	</table>
+</script>
+
+<script type="x-mustache-template" id="forecast_conditions_tmpl">
+	{{#conditions}}
+	<td>
+		<h2>{{day_of_week}}</h2>
+		<img src="{{icon}}">
+		<h6>{{condition}}</h6>
+		<h6>Low: {{low}}&deg;F</h6>
+		<h6>High: {{high}}&deg;F</h6>
+	</td>
+	{{/conditions}}
+</script>
+
+<div id="options">
+	<div id="options_header">Options</div>
+	<div class="ui-widget">
+		<label for="city">Type in destination: </label>	
+		<input id="city" />
+	</div>
+	<div id="city_select"><a href="#" onClick="getCurrentLocation()">Get Current Location</a></div>
+</div>
+
+<div id="forecast_information"></div>
+
+<div id="current_conditions"></div>
+
+<div id="forecast_conditions">
+	<table>
+		<tr>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>
