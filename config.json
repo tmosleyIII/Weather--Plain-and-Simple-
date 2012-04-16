@@ -3,11 +3,11 @@
 	"name": "Weather",
 	"author": "tmosleyiii@gmail.com",
 	"version": "0.2",
-	"description": "My Extension Description",
+	"description": "A Weather extension for Google Chrome built using Trigger.io",
 	"permissions": ["tabs", "geolocation", "http://www.google.com/*"],
 	"background_files": ["js/background.js"],
 	"browser_action": {
-		"default_title": "An example browser toolbar icon",
+		"default_title": "Weather - Plain and Simple",
 		"default_popup": "index.html",
 		"default_icon": "img/sun_19.png"
 	},

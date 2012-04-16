@@ -12,7 +12,7 @@
 </head>
 <body>
 <script type="x-mustache-template" id="forecast_information_tmpl">
-	<span>Forecast for {{city}}</span><br/>
+	<span>Forecast for {{city}}</span>
 	<span>{{forecast_date}}</span>
 </script>
 
@@ -21,10 +21,12 @@
 		<tr>
 			<td>
 				<div><img src="{{icon}}"></div>
+			</td>
+			<td>
+				<div id="main_temp">{{temp_f}}&deg;F</div>
 				<div>{{condition}}</div>
 			</td>
 			<td>
-				<div>{{temp_f}}&deg;F</div>
 				<div>{{humidity}}</div>
 				<div>{{wind_condition}}</div>
 			</td>
