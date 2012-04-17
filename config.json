@@ -2,7 +2,7 @@
 	"platform_version": "v1.2",
 	"name": "Weather - Plain and Simple",
 	"author": "tmosleyiii@gmail.com",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"description": "A Weather extension for Google Chrome built using Trigger.io",
 	"permissions": ["tabs", "geolocation", "http://www.google.com/*"],
 	"background_files": ["js/background.js"],

@@ -10,7 +10,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 
 /* Set Global Styles */
 html {background:#FFF;}
-body {font:12px/1.5 arial,helvetica,sans-serif; color:#222; width: 320px; height: 350px}
+body {font:12px/1.5 arial,helvetica,sans-serif; color:#222; width: 280px; height: 350px}
 
 a:link, a:visited {text-decoration:none; color:red;}
 /*img {padding:5px; margin:4px 5px 5px 0; background:#fff;}*/
@@ -19,14 +19,16 @@ h2, #options_header {font-size:18px; text-align:left;}
 /*#addl_conditions {text-align: right;}*/
 h6, #current_conditions td {font-size:11px;}
 #forecast_information, #current_conditions, #forecast_conditions, #options {background:#fff;  padding:5px 10px; border-top:1px solid #fff; border-bottom:1px solid #999;}
-#current_conditions {height: 50px;}
+#current_conditions {height: 70px;}
+#current_conditions img {width: 60px;}
 #current_conditions table{width: 100%;}
-#city_search {padding:7px 3px 3px 3px;}
+#city_search {padding:7px 3px 3px 10px;}
+#city_form {margin: 0px;}
 /*#location {width: 40px;float: right;}*/
 #forecast_information span {display:block; font-size:16px; font-weight:bold; text-shadow:0 1px #fff; text-align: center}
 /*#header {height: 40px;}*/
 #forecast_conditions td {width:105px;} /* this width makes sure that the weather desc don't wrap - adjust for diff page sizes */
-#forecast_conditions td img {float:left; margin-top:3px; width:60px;}
+#forecast_conditions td img {float:left; margin-top:3px; width:50px;}
 #forecast_day {width:60px;}
 
 #options {border-bottom:none}
