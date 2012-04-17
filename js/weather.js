@@ -114,11 +114,21 @@ function emptyContent() {
 	forge.logging.log('finished emptying content');
 }
 
+function setBadgeText(info) {
+	"use strict";
+	chrome.browserAction.setBadgeText({text:info});
+}
 function populateWeatherConditions(weatherCondition) {
 	"use strict";
-    var tmpl, output;
+    var tmpl, output, temp;
 	emptyContent();
     forge.logging.log('beginning populating weather conditions');
+	if (weatherCondition.currentConditions.temp_f) {
+		temp = weatherCondition.currentConditions.temp_f 
+	} else if (weatherCondition.currentConditions.temp_c) {
+		temp = weatherCondition.currentConditions.temp_c
+	}
+	setBadgeText(temp);
     tmpl = $('#forecast_information_tmpl').html();
     output = Mustache.to_html(tmpl, weatherCondition.forecast);
     $('#forecast_information').append(output);
