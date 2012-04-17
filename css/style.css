@@ -8,23 +8,25 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 /* CSS Rest ends */
 
 /* Set Global Styles */
-html {background:#EEE;}
-body {font:12px/1.5 arial,helvetica,sans-serif; color:#222; height: 400px}
+html {background:#FFF;}
+body {font:12px/1.5 arial,helvetica,sans-serif; color:#222; width: 300px; height: 320px}
 a:link, a:visited {text-decoration:none; color:red;}
-img {padding:5px; margin:5px 5px 5px 0; background:#fff;}
+img {padding:5px; margin:4px 5px 5px 0; background:#fff;}
 h2, #options_header {font-size:18px; text-align:left;}
-#main_temp {font-size:24px;}
-h6, #current_conditions td {font-size:10px;}
-#current_conditions {height:100px;}
-#forecast_information, #current_conditions, #forecast_conditions, #options {background:#eee; padding:5px 10px; border-top:1px solid #fff; border-bottom:1px solid #999;}
-
+#main_temp {font-size:30px;}
+/*#addl_conditions {text-align: right;}*/
+h6, #current_conditions td {font-size:11px;}
+#forecast_information, #current_conditions, #forecast_conditions, #options {background:#fff;  padding:5px 10px; border-top:1px solid #fff; border-bottom:1px solid #999;}
+#current_conditions table{width: 100%;}
+#city_search {padding:10px 3px 3px 5px; width: 240px; height: 40px; float: left;}
+#location {width: 40px;float: right;}
 #forecast_information span {display:block; font-size:16px; font-weight:bold; text-shadow:0 1px #fff; text-align: center}
-
+#header {height: 40px;}
 #forecast_conditions td {width:160px;} /* this width makes sure that the weather desc don't wrap - adjust for diff page sizes */
 #forecast_conditions td img {float:left; margin-top:3px;}
 
 #options {border-bottom:none}
 .ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
-#city { width: 25em; }
+#city { width: 236px; }
 
 .template {display:none;}

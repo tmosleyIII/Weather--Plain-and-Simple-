@@ -221,10 +221,10 @@ $(function () {
 	});
 
 
-	//setInterval(function () {
-	//	forge.prefs.get('city',
-	//		getWeatherInfo(city, populateWeatherConditions),
-	//		forge.logging.log('ERROR! failed when retrieving city preferences'));
-	//}, 30000);
+	setInterval(function () {
+		forge.prefs.get('city',
+			getWeatherInfo(city, populateWeatherConditions),
+			forge.logging.log('ERROR! failed when retrieving city preferences'));
+	}, 900000);
 });
 

@@ -12,8 +12,10 @@
 </head>
 <body>
 <script type="x-mustache-template" id="forecast_information_tmpl">
+	<div id="city_forecast">
 	<span>Forecast for {{city}}</span>
 	<span>{{forecast_date}}</span>
+	</div>
 </script>
 
 <script type="x-mustache-template" id="current_conditions_tmpl">
@@ -26,7 +28,7 @@
 				<div id="main_temp">{{temp_f}}&deg;F</div>
 				<div>{{condition}}</div>
 			</td>
-			<td>
+			<td id="addl_conditions">
 				<div>{{humidity}}</div>
 				<div>{{wind_condition}}</div>
 			</td>
@@ -46,13 +48,18 @@
 	{{/conditions}}
 </script>
 
-<div id="options">
-	<div id="options_header">Options</div>
-	<div class="ui-widget">
-		<label for="city">Type in destination: </label>	
-		<input id="city" />
+<div id="header">
+	<div id="city_search">
+		<div class="ui-widget">
+			<input id="city" />
+		</div>
 	</div>
-	<div id="city_select"><a href="#" onClick="getCurrentLocation()">Get Current Location</a></div>
+	<div id="location"><a href="#" onClick="getCurrentLocation()"><img src="img/location.png"></a></div>
+	<div id="options_icons">
+		
+	</div>
+
+
 </div>
 
 <div id="forecast_information"></div>
