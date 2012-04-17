@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery_ui_style.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
@@ -38,28 +39,26 @@
 
 <script type="x-mustache-template" id="forecast_conditions_tmpl">
 	{{#conditions}}
-	<td>
-		<h2>{{day_of_week}}</h2>
-		<img src="{{icon}}">
-		<h6>{{condition}}</h6>
-		<h6>Low: {{low}}&deg;F</h6>
-		<h6>High: {{high}}&deg;F</h6>
-	</td>
+	<tr>
+		<td id="forecast_day"><h2>{{day_of_week}}</h2></td>
+		<td><span><img src="{{icon}}"></span></td>
+		<td>
+			<div><h4>{{condition}}</h4><div>
+			<div>Low: {{low}}&deg;F</div>
+			<div>High: {{high}}&deg;F</div>
+		</td>
+	</tr>
 	{{/conditions}}
 </script>
 
 <div id="header">
-	<div id="city_search">
-		<div class="ui-widget">
-			<input id="city" />
-		</div>
+<form class="form-horizontal">
+	<div id="city_search" class="input-prepend">
+		<button class="btn btn-primary" type="button" onClick="getCurrentLocation()"><i class="icon-map-marker icon-white"></i></button><input id="city" placeholder="Search for City..."/>
+		<!--<a href=# onclick="getCurrentLocation()"><img src="img/location.png"></a>-->
 	</div>
-	<div id="location"><a href="#" onClick="getCurrentLocation()"><img src="img/location.png"></a></div>
-	<div id="options_icons">
-		
-	</div>
-
-
+</form>
+	<!--<div id="options_icons"></div>-->
 </div>
 
 <div id="forecast_information"></div>
