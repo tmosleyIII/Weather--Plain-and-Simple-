@@ -27,9 +27,11 @@ h6, #current_conditions td {font-size:11px;}
 /*#location {width: 40px;float: right;}*/
 #forecast_information span {display:block; font-size:16px; font-weight:bold; text-shadow:0 1px #fff; text-align: center}
 /*#header {height: 40px;}*/
-#forecast_conditions td {width:105px;} /* this width makes sure that the weather desc don't wrap - adjust for diff page sizes */
+.forecast_day  {width:60px;}
+.forecast_icon {width:74px;}
+/*#forecast_conditions td {width:95px;} *//* this width makes sure that the weather desc don't wrap - adjust for diff page sizes */
 #forecast_conditions td img {float:left; margin-top:3px; width:50px;}
-#forecast_day {width:60px;}
+
 
 #options {border-bottom:none}
 .ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
