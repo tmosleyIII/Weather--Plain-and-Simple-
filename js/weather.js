@@ -139,7 +139,7 @@ function populateWeatherConditions(weatherCondition) {
     forge.logging.log('finished populating current conditions');
     tmpl = $('#forecast_conditions_tmpl').html();
     output = Mustache.to_html(tmpl, {conditions: weatherCondition.forecastConditions});
-    $('#forecast_conditions table tr').append(output);
+    $('#forecast_conditions table').append(output);
     forge.logging.log('finished populating forecast conditions');
     forge.logging.log('finished populating weather conditions');
 }
@@ -175,7 +175,19 @@ function getCurrentLocation() {
 }
 
 
+$.widget('ui.myAutocomplete', $.extend({}, $.ui.autocomplete.prototype, {
+    _suggest : function(items) {
+        // Call ui.autocomplete's parent method
+        $.ui.autocomplete.prototype._suggest.call(this, items);
 
+        // Find the first list item
+        var item = this.menu.element.children()[0];
+
+        // Make this item active.
+        // An event is expected so a fake one is passed as a parameter.
+        this.menu.activate(new jQuery.Event('null.event'), $(item));
+    }
+}));
 
 
 
@@ -194,10 +206,10 @@ $(function () {
 		);
 
 
-	$("#city").autocomplete({
+	$("#city").myAutocomplete({
 		source: function (request, response) {
 			forge.request.ajax({
-				url: "http://ws.geonames.org/searchJSON",
+				url: "http://api.geonames.org/searchJSON?&username=tmosleyIII&style=full",
 				dataType: "jsonp",
 				data: {
 					featureClass: "P",
@@ -228,7 +240,14 @@ $(function () {
 		close: function () {
 			$(this).removeClass("ui-corner-top").addClass("ui-corner-all");
 		}
-	});
+	}).keypress(function(e) {
+
+          if (e.keyCode === 13) 
+          {
+            $(this).closest('form').trigger('submit');
+          }
+
+      });
 
 
 	setInterval(function () {

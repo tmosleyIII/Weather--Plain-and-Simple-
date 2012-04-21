@@ -15,7 +15,7 @@
 <script type="x-mustache-template" id="forecast_information_tmpl">
 	<div id="city_forecast">
 	<span>Forecast for {{city}}</span>
-	<span>{{forecast_date}}</span>
+	<!--<span>{{forecast_date}}</span>-->
 	</div>
 </script>
 
@@ -40,12 +40,11 @@
 <script type="x-mustache-template" id="forecast_conditions_tmpl">
 	{{#conditions}}
 	<tr>
-		<td><div class="forecast_day"><h2>{{day_of_week}}</h2></div></td>
-		<td><div class="forecast_icon"><img src="{{icon}}"></div></td>
-		<td>
-			<div><h4>{{condition}}</h4><div>
-			<div>Low: {{low}}&deg;F</div>
-			<div>High: {{high}}&deg;F</div>
+		<td class="forecast_day"><div>{{day_of_week}}</div></td>
+		<td class="forecast_icon"><div><img src="{{icon}}"></div></td>
+		<td class="conditions_info">
+			<div class="condition"><p>{{condition}}</p><div>
+			<div><span class="temp_high">{{high}}&deg;F</span>     <span class="temp_low">{{low}}&deg;F</span></div>
 		</td>
 	</tr>
 	{{/conditions}}
