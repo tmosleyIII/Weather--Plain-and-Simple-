@@ -44,20 +44,18 @@
 		<td class="forecast_icon"><div><img src="{{icon}}"></div></td>
 		<td class="conditions_info">
 			<div class="condition"><p>{{condition}}</p><div>
-			<div><span class="temp_high">{{high}}&deg;F</span>     <span class="temp_low">{{low}}&deg;F</span></div>
+			<div><span class="temp_high">{{high}}&deg;F</span>  /   <span class="temp_low">{{low}}&deg;F</span></div>
 		</td>
 	</tr>
 	{{/conditions}}
 </script>
 
 <div id="header">
-<form id="city_form" class="form-horizontal">
-	<div id="city_search" class="input-prepend">
-		<button class="btn btn-primary" type="button" onClick="getCurrentLocation()"><i class="icon-map-marker icon-white"></i></button><input id="city" placeholder="Search for City..."/>
-		<!--<a href=# onclick="getCurrentLocation()"><img src="img/location.png"></a>-->
-	</div>
-</form>
-	<!--<div id="options_icons"></div>-->
+	<form id="city_form" class="form-horizontal">
+		<div id="city_search" class="input-append">
+			<input id="city" placeholder="Search for City..."/><button class="btn btn-primary" type="button" onClick="getCurrentLocation()"><i class="icon-map-marker icon-white"></i></button>
+		</div>
+	</form>
 </div>
 
 <div id="forecast_information"></div>

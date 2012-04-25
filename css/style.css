@@ -1,13 +1,3 @@
-/*
-YUI 3.4.1 (build 4118)
-Copyright 2011 Yahoo! Inc. All rights reserved.
-Licensed under the BSD License.
-http://yuilibrary.com/license/
-*/
-/*
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}*/
-/* CSS Rest ends */
-
 /* Set Global Styles */
 html {background:#FFF;}
 body {font:12px/1.5 arial,helvetica,sans-serif; color:#222; width: 274px; height: 350px}
@@ -30,8 +20,8 @@ h6, #current_conditions td {font-size:11px;}
 #forecast_information span {display:block; font-size:16px; font-weight:bold; text-shadow:0 1px #fff; text-align: center}
 .forecast_day  {width:50px;}
 /*.forecast_icon {width:84px;}*/
-.temp_high {font-weight:bold;}
-.temp_low {color:#868585;}
+.temp_high {font-weight:bold; color:#FF9933;}
+.temp_low {color:#0099FF;}
 .conditions_info {width:150px;}
 .condition {font-weight:bold;}
 /*#forecast_conditions td {width:95px;} *//* this width makes sure that the weather desc don't wrap - adjust for diff page sizes */

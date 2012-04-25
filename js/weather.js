@@ -28,10 +28,24 @@ function buildCurrentCondition(currentCondition) {
 	"use strict";
 	forge.logging.log('building current conditions object');
 	var newCondition = xmlToJson(currentCondition, ['condition', 'temp_f', 'humidity', 'icon', 'wind_condition']);
-	newCondition.icon = formatImgSrc(newCondition.icon);
-	return newCondition;
+	var validCondition = checkValidWeatherData(newCondition);
+	if (validCondition === false) {
+		getWeatherInfo('Dayton', populateWeatherConditions);
+	} else {
+		newCondition.icon = formatImgSrc(newCondition.icon);
+		return newCondition;
+	}
+
 }
 
+function checkValidWeatherData(weatherData) {
+	if (typeof weatherData.condition === "undefined") {
+		forge.logging.log('[buildCurrentConditions] Invalid data found under city name');
+		return false;
+	} else {
+		return true;
+	}
+}
 function buildForecastCondition(oldCondition) {
 	"use strict";
 	forge.logging.log('[buildForecastCondition] building forecast condition');
@@ -123,12 +137,15 @@ function populateWeatherConditions(weatherCondition) {
     var tmpl, output, temp;
 	emptyContent();
     forge.logging.log('beginning populating weather conditions');
-	if (weatherCondition.currentConditions.temp_f) {
-		temp = weatherCondition.currentConditions.temp_f 
-	} else if (weatherCondition.currentConditions.temp_c) {
-		temp = weatherCondition.currentConditions.temp_c
-	}
-	setBadgeText(temp);
+	//if (weatherCondition.currentConditions.temp_f) {
+	//temp = weatherCondition.currentConditions.temp_f 
+	//} else if (weatherCondition.currentConditions.temp_c) {
+	//	temp = weatherCondition.currentConditions.temp_c
+	//}
+	temp = (weatherCondition.currentConditions.temp_f)? weatherCondition.currentConditions.temp_f : weatherCondition.currentConditions.temp_c;
+	if (forge.is.chrome()) {
+		setBadgeText(temp);
+	};
     tmpl = $('#forecast_information_tmpl').html();
     output = Mustache.to_html(tmpl, weatherCondition.forecast);
     $('#forecast_information').append(output);
